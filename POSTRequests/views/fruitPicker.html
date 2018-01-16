@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fruit Picker</title>
+</head>
+<body>
+    <form action="/favorite_fruit" method="POST">
+        <p>What is your favorite fruit?</p>
+        {% for fruit in fruits %}
+         <p>
+             <input type="radio" name="fruit" value="{{ fruit }}">{{fruit}}</input>
+         </p>
+         {% endfor %}
+         <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

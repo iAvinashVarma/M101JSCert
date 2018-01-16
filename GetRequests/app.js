@@ -6,8 +6,6 @@ app.engine('html', cons.swig);
 app.set('view engine', 'html');
 app.set('views', __dirname + "/views");
 
-app.use(app.router);
-
 // Handle for internal server errors.
 function errorHandler(error, request, response, next){
     console.error(error.message);
@@ -20,10 +18,10 @@ app.use(errorHandler);
 
 app.get('/:name', function(request, response, next){
     var name = request.params.name;
-    var getvar1 = request.query.getvar1;
-    var getvar2 = request.query.getvar2;
-    response.render('hello', { name: name, getvar1: getvar1, getvar2: getvar2})
+    var getVarOne = request.query.getvar1;
+    var getVarTwo = request.query.getvar2;
+    response.render('hello', { name: name, getvar1: getVarOne, getvar2: getVarTwo})
 });
 
-app.listen(3000);
+app.listen(8003);
 console.log("Express server listening on port 8003");
